@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Football Predictions</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="potential" placeholder="potential" required="required" />
+        <input type="text" name="value_eur" placeholder="value_eur" required="required" />
+		<input type="text" name="wage_eur" placeholder="wage_eur" required="required" />
+		<input type="text" name="age" placeholder="age" required="required" />
+    	<input type="text" name="height_cm" placeholder="height_cm" required="required" />
+        <input type="text" name="weight_kg" placeholder="weight_kg" required="required" />
+		<input type="text" name="pace" placeholder="pace" required="required" />
+		<!-- <input type="text" name="overall" placeholder="overall" required="required" /> -->
+    	<input type="text" name="shooting" placeholder="shooting" required="required" />
+        <input type="text" name="passing" placeholder="passing" required="required" />
+		<input type="text" name="dribbling" placeholder="dribbling" required="required" />
+		<input type="text" name="defending" placeholder="defending" required="required" />
+    	<input type="text" name="physic" placeholder="physic" required="required" />
+        <input type="text" name="attacking_crossing" placeholder="attacking_crossing" required="required" />
+		<input type="text" name="attacking_finishing" placeholder="attacking_finishing" required="required" />
+		<input type="text" name="attacking_heading_accuracy" placeholder="attacking_heading_accuracy" required="required" />
+    	<input type="text" name="attacking_short_passing" placeholder="attacking_short_passing" required="required" />
+        <input type="text" name="attacking_volleys" placeholder="attacking_volleys" required="required" />
+		<input type="text" name="skill_dribbling" placeholder="skill_dribbling" required="required" />
+		<input type="text" name="skill_curve" placeholder="skill_curve" required="required" />
+        	<input type="text" name="skill_fk_accuracy" placeholder="skill_fk_accuracy" required="required" />
+        <input type="text" name="skill_long_passing" placeholder="skill_long_passing" required="required" />
+		<input type="text" name="skill_ball_control" placeholder="skill_ball_control" required="required" />
+		<input type="text" name="movement_acceleration" placeholder="movement_acceleration" required="required" />
+    	<input type="text" name="movement_sprint_speed" placeholder="movement_sprint_speed" required="required" />
+        <input type="text" name="movement_agility" placeholder="movement_agility" required="required" />
+		<input type="text" name="movement_reactions" placeholder="movement_reactions" required="required" />
+		<input type="text" name="movement_balance" placeholder="movement_balance" required="required" />
+    	<input type="text" name="power_shot_power" placeholder="power_shot_power" required="required" />
+        <input type="text" name="power_jumping" placeholder="power_jumping" required="required" />
+		<input type="text" name="power_stamina" placeholder="power_stamina" required="required" />
+		<input type="text" name="power_strength" placeholder="power_strength" required="required" />
+    	<input type="text" name="power_long_shots" placeholder="power_long_shots" required="required" />
+        <input type="text" name="mentality_aggression" placeholder="mentality_aggression" required="required" />
+		<input type="text" name="mentality_interceptions" placeholder="mentality_interceptions" required="required" />
+		<input type="text" name="mentality_positioning" placeholder="mentality_positioning" required="required" />
+    	<input type="text" name="mentality_vision" placeholder="mentality_vision" required="required" />
+        <input type="text" name="mentality_penalties" placeholder="mentality_penalties" required="required" />
+		<input type="text" name="mentality_composure" placeholder="mentality_composure" required="required" />
+		<input type="text" name="defending_marking_awareness" placeholder="defending_marking_awareness" required="required" />
+        <input type="text" name="defending_standing_tackle" placeholder="defending_standing_tackle" required="required" />
+		<input type="text" name="defending_sliding_tackle" placeholder="defending_sliding_tackle" required="required" />
+		<!-- <input type="text" name="Petal_Width" placeholder="Petal_Width" required="required" />
+    	<input type="text" name="Sepal_Length" placeholder="Sepal_Length" required="required" />
+        <input type="text" name="Sepal_Width" placeholder="Sepal_Width" required="required" />
+		<input type="text" name="Petal_Length" placeholder="Petal_Length" required="required" />
+		<input type="text" name="Petal_Width" placeholder="Petal_Width" required="required" /> -->
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
